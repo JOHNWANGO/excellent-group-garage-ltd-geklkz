@@ -1,8 +1,10 @@
+
 import React from 'react';
 import { Platform } from 'react-native';
 import { NativeTabs, Icon, Label } from 'expo-router/unstable-native-tabs';
 import { Stack } from 'expo-router';
 import FloatingTabBar, { TabBarItem } from '@/components/FloatingTabBar';
+import { colors } from '@/styles/commonStyles';
 
 export default function TabLayout() {
   // Define the tabs configuration
@@ -14,10 +16,16 @@ export default function TabLayout() {
       label: 'Home',
     },
     {
-      name: 'profile',
-      route: '/(tabs)/profile',
-      icon: 'person.fill',
-      label: 'Profile',
+      name: 'services',
+      route: '/(tabs)/services',
+      icon: 'wrench.and.screwdriver.fill',
+      label: 'Services',
+    },
+    {
+      name: 'contact',
+      route: '/(tabs)/contact',
+      icon: 'phone.fill',
+      label: 'Contact',
     },
   ];
 
@@ -26,12 +34,16 @@ export default function TabLayout() {
     return (
       <NativeTabs>
         <NativeTabs.Trigger name="(home)">
-          <Icon sf="house.fill" drawable="ic_home" />
+          <Icon sf="house.fill" drawable="ic_home" color={colors.text} />
           <Label>Home</Label>
         </NativeTabs.Trigger>
-        <NativeTabs.Trigger name="profile">
-          <Icon sf="person.fill" drawable="ic_profile" />
-          <Label>Profile</Label>
+        <NativeTabs.Trigger name="services">
+          <Icon sf="wrench.and.screwdriver.fill" drawable="ic_services" color={colors.text} />
+          <Label>Services</Label>
+        </NativeTabs.Trigger>
+        <NativeTabs.Trigger name="contact">
+          <Icon sf="phone.fill" drawable="ic_contact" color={colors.text} />
+          <Label>Contact</Label>
         </NativeTabs.Trigger>
       </NativeTabs>
     );
@@ -43,11 +55,12 @@ export default function TabLayout() {
       <Stack
         screenOptions={{
           headerShown: false,
-          animation: 'none', // Remove fade animation to prevent black screen flash
+          animation: 'none',
         }}
       >
         <Stack.Screen name="(home)" />
-        <Stack.Screen name="profile" />
+        <Stack.Screen name="services" />
+        <Stack.Screen name="contact" />
       </Stack>
       <FloatingTabBar tabs={tabs} />
     </>
