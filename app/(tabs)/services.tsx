@@ -58,7 +58,7 @@ export default function ServicesScreen() {
       title: 'Air Conditioning',
       description: 'AC system inspection, recharge, and repair for optimal cabin comfort.',
       icon: 'snowflake',
-      color: colors.highlight,
+      color: colors.accent,
     },
     {
       id: '7',
@@ -100,7 +100,7 @@ export default function ServicesScreen() {
       title: 'General Repairs',
       description: 'All other automotive repairs and maintenance services for your vehicle.',
       icon: 'wrench.and.screwdriver.fill',
-      color: colors.highlight,
+      color: colors.accent,
     },
   ];
 
@@ -134,11 +134,11 @@ export default function ServicesScreen() {
 
           {/* Services List */}
           {services.map((service) => (
-            <View key={service.id} style={[styles.serviceCard, { backgroundColor: colors.card }]}>
+            <View key={service.id} style={[styles.serviceCard, { backgroundColor: colors.card, borderColor: colors.border, borderWidth: 1 }]}>
               <View style={[styles.iconContainer, { backgroundColor: service.color }]}>
                 <IconSymbol 
                   name={service.icon as any} 
-                  color={service.color === colors.accent || service.color === colors.highlight ? colors.text : colors.card} 
+                  color={colors.card} 
                   size={32} 
                 />
               </View>
@@ -226,7 +226,7 @@ const styles = StyleSheet.create({
     padding: 24,
     alignItems: 'center',
     marginTop: 12,
-    boxShadow: '0px 2px 8px rgba(41, 98, 255, 0.3)',
+    boxShadow: '0px 2px 8px rgba(220, 0, 0, 0.3)',
     elevation: 4,
   },
   footerTitle: {

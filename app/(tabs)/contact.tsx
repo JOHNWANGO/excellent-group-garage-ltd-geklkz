@@ -75,7 +75,7 @@ export default function ContactScreen() {
 
           {/* Contact Info Cards */}
           <Pressable 
-            style={[styles.contactCard, { backgroundColor: colors.card }]}
+            style={[styles.contactCard, { backgroundColor: colors.card, borderColor: colors.border, borderWidth: 1 }]}
             onPress={handleCall}
           >
             <View style={[styles.contactIconContainer, { backgroundColor: colors.primary }]}>
@@ -93,7 +93,7 @@ export default function ContactScreen() {
           </Pressable>
 
           <Pressable 
-            style={[styles.contactCard, { backgroundColor: colors.card }]}
+            style={[styles.contactCard, { backgroundColor: colors.card, borderColor: colors.border, borderWidth: 1 }]}
             onPress={handleEmail}
           >
             <View style={[styles.contactIconContainer, { backgroundColor: colors.secondary }]}>
@@ -110,9 +110,9 @@ export default function ContactScreen() {
             <IconSymbol name="chevron.right" color={colors.textSecondary} size={20} />
           </Pressable>
 
-          <View style={[styles.contactCard, { backgroundColor: colors.card }]}>
+          <View style={[styles.contactCard, { backgroundColor: colors.card, borderColor: colors.border, borderWidth: 1 }]}>
             <View style={[styles.contactIconContainer, { backgroundColor: colors.accent }]}>
-              <IconSymbol name="location.fill" color={colors.text} size={28} />
+              <IconSymbol name="location.fill" color={colors.card} size={28} />
             </View>
             <View style={styles.contactContent}>
               <Text style={[styles.contactLabel, { color: colors.textSecondary }]}>
@@ -124,7 +124,7 @@ export default function ContactScreen() {
             </View>
           </View>
 
-          <View style={[styles.contactCard, { backgroundColor: colors.card }]}>
+          <View style={[styles.contactCard, { backgroundColor: colors.card, borderColor: colors.border, borderWidth: 1 }]}>
             <View style={[styles.contactIconContainer, { backgroundColor: colors.highlight }]}>
               <IconSymbol name="clock.fill" color={colors.primary} size={28} />
             </View>
@@ -141,7 +141,7 @@ export default function ContactScreen() {
           </View>
 
           {/* Booking Form */}
-          <View style={[styles.formCard, { backgroundColor: colors.card }]}>
+          <View style={[styles.formCard, { backgroundColor: colors.card, borderColor: colors.border, borderWidth: 1 }]}>
             <Text style={[styles.formTitle, { color: colors.text }]}>
               Book an Appointment
             </Text>
@@ -156,7 +156,7 @@ export default function ContactScreen() {
               <TextInput
                 style={[styles.input, { 
                   color: colors.text, 
-                  borderColor: colors.textSecondary + '40',
+                  borderColor: colors.border,
                   backgroundColor: colors.background,
                 }]}
                 placeholder="John Doe"
@@ -173,7 +173,7 @@ export default function ContactScreen() {
               <TextInput
                 style={[styles.input, { 
                   color: colors.text, 
-                  borderColor: colors.textSecondary + '40',
+                  borderColor: colors.border,
                   backgroundColor: colors.background,
                 }]}
                 placeholder="john@example.com"
@@ -192,7 +192,7 @@ export default function ContactScreen() {
               <TextInput
                 style={[styles.input, { 
                   color: colors.text, 
-                  borderColor: colors.textSecondary + '40',
+                  borderColor: colors.border,
                   backgroundColor: colors.background,
                 }]}
                 placeholder="+1 (234) 567-8900"
@@ -210,7 +210,7 @@ export default function ContactScreen() {
               <TextInput
                 style={[styles.textArea, { 
                   color: colors.text, 
-                  borderColor: colors.textSecondary + '40',
+                  borderColor: colors.border,
                   backgroundColor: colors.background,
                 }]}
                 placeholder="Describe the service you need or any questions you have..."
@@ -336,7 +336,7 @@ const styles = StyleSheet.create({
     padding: 16,
     alignItems: 'center',
     marginTop: 8,
-    boxShadow: '0px 2px 8px rgba(41, 98, 255, 0.3)',
+    boxShadow: '0px 2px 8px rgba(220, 0, 0, 0.3)',
     elevation: 4,
   },
   submitButtonText: {

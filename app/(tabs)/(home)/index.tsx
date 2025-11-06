@@ -41,7 +41,7 @@ export default function HomeScreen() {
           </View>
 
           {/* Welcome Card */}
-          <View style={[styles.card, { backgroundColor: colors.card }]}>
+          <View style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border, borderWidth: 1 }]}>
             <Text style={[styles.cardTitle, { color: colors.text }]}>
               Welcome to Excellence
             </Text>
@@ -52,7 +52,7 @@ export default function HomeScreen() {
 
           {/* Quick Info Cards */}
           <View style={styles.infoGrid}>
-            <View style={[styles.infoCard, { backgroundColor: colors.card }]}>
+            <View style={[styles.infoCard, { backgroundColor: colors.card, borderColor: colors.border, borderWidth: 1 }]}>
               <View style={[styles.infoIconContainer, { backgroundColor: colors.primary }]}>
                 <IconSymbol name="clock.fill" color={colors.card} size={28} />
               </View>
@@ -64,7 +64,7 @@ export default function HomeScreen() {
               </Text>
             </View>
 
-            <View style={[styles.infoCard, { backgroundColor: colors.card }]}>
+            <View style={[styles.infoCard, { backgroundColor: colors.card, borderColor: colors.border, borderWidth: 1 }]}>
               <View style={[styles.infoIconContainer, { backgroundColor: colors.secondary }]}>
                 <IconSymbol name="checkmark.seal.fill" color={colors.card} size={28} />
               </View>
@@ -78,9 +78,9 @@ export default function HomeScreen() {
           </View>
 
           <View style={styles.infoGrid}>
-            <View style={[styles.infoCard, { backgroundColor: colors.card }]}>
+            <View style={[styles.infoCard, { backgroundColor: colors.card, borderColor: colors.border, borderWidth: 1 }]}>
               <View style={[styles.infoIconContainer, { backgroundColor: colors.accent }]}>
-                <IconSymbol name="dollarsign.circle.fill" color={colors.text} size={28} />
+                <IconSymbol name="dollarsign.circle.fill" color={colors.card} size={28} />
               </View>
               <Text style={[styles.infoTitle, { color: colors.text }]}>
                 Fair Pricing
@@ -90,7 +90,7 @@ export default function HomeScreen() {
               </Text>
             </View>
 
-            <View style={[styles.infoCard, { backgroundColor: colors.card }]}>
+            <View style={[styles.infoCard, { backgroundColor: colors.card, borderColor: colors.border, borderWidth: 1 }]}>
               <View style={[styles.infoIconContainer, { backgroundColor: colors.highlight }]}>
                 <IconSymbol name="star.fill" color={colors.primary} size={28} />
               </View>
@@ -104,30 +104,30 @@ export default function HomeScreen() {
           </View>
 
           {/* Why Choose Us Section */}
-          <View style={[styles.card, { backgroundColor: colors.card }]}>
+          <View style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border, borderWidth: 1 }]}>
             <Text style={[styles.cardTitle, { color: colors.text }]}>
               Why Choose Us?
             </Text>
             <View style={styles.featureItem}>
-              <IconSymbol name="checkmark.circle.fill" color={colors.secondary} size={24} />
+              <IconSymbol name="checkmark.circle.fill" color={colors.primary} size={24} />
               <Text style={[styles.featureText, { color: colors.textSecondary }]}>
                 Over 15 years of automotive excellence
               </Text>
             </View>
             <View style={styles.featureItem}>
-              <IconSymbol name="checkmark.circle.fill" color={colors.secondary} size={24} />
+              <IconSymbol name="checkmark.circle.fill" color={colors.primary} size={24} />
               <Text style={[styles.featureText, { color: colors.textSecondary }]}>
                 State-of-the-art diagnostic equipment
               </Text>
             </View>
             <View style={styles.featureItem}>
-              <IconSymbol name="checkmark.circle.fill" color={colors.secondary} size={24} />
+              <IconSymbol name="checkmark.circle.fill" color={colors.primary} size={24} />
               <Text style={[styles.featureText, { color: colors.textSecondary }]}>
                 Warranty on all repairs and services
               </Text>
             </View>
             <View style={styles.featureItem}>
-              <IconSymbol name="checkmark.circle.fill" color={colors.secondary} size={24} />
+              <IconSymbol name="checkmark.circle.fill" color={colors.primary} size={24} />
               <Text style={[styles.featureText, { color: colors.textSecondary }]}>
                 Convenient location with ample parking
               </Text>
@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 16,
-    boxShadow: '0px 4px 12px rgba(41, 98, 255, 0.3)',
+    boxShadow: '0px 4px 12px rgba(220, 0, 0, 0.3)',
     elevation: 5,
   },
   heroTitle: {
