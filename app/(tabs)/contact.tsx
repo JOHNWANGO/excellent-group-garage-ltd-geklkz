@@ -13,12 +13,20 @@ export default function ContactScreen() {
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleCall = () => {
-    Linking.openURL('tel:+1234567890');
+  const phoneNumbers = [
+    '+254 726 883 350',
+    '+254 703 456 919',
+    '+254 703 456 939',
+    '+254 723 477 838'
+  ];
+
+  const handleCall = (phoneNumber: string) => {
+    const cleanNumber = phoneNumber.replace(/\s/g, '');
+    Linking.openURL(`tel:${cleanNumber}`);
   };
 
   const handleEmail = () => {
-    Linking.openURL('mailto:info@excellentgroupgarage.com');
+    Linking.openURL('mailto:info@exellentgroupgarageltd.com');
   };
 
   const handleSubmit = () => {
@@ -73,25 +81,29 @@ export default function ContactScreen() {
             </Text>
           </View>
 
-          {/* Contact Info Cards */}
-          <Pressable 
-            style={[styles.contactCard, { backgroundColor: colors.card, borderColor: colors.border, borderWidth: 1 }]}
-            onPress={handleCall}
-          >
-            <View style={[styles.contactIconContainer, { backgroundColor: colors.primary }]}>
-              <IconSymbol name="phone.fill" color={colors.card} size={28} />
-            </View>
-            <View style={styles.contactContent}>
-              <Text style={[styles.contactLabel, { color: colors.textSecondary }]}>
-                Phone
-              </Text>
-              <Text style={[styles.contactValue, { color: colors.text }]}>
-                +1 (234) 567-8900
+          {/* Phone Numbers */}
+          <View style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border, borderWidth: 1 }]}>
+            <View style={styles.cardHeader}>
+              <IconSymbol name="phone.fill" color={colors.primary} size={24} />
+              <Text style={[styles.cardTitle, { color: colors.text, marginLeft: 8 }]}>
+                Phone Numbers
               </Text>
             </View>
-            <IconSymbol name="chevron.right" color={colors.textSecondary} size={20} />
-          </Pressable>
+            {phoneNumbers.map((phoneNumber, index) => (
+              <Pressable 
+                key={index}
+                style={styles.phoneItem}
+                onPress={() => handleCall(phoneNumber)}
+              >
+                <Text style={[styles.phoneText, { color: colors.text }]}>
+                  {phoneNumber}
+                </Text>
+                <IconSymbol name="phone.circle.fill" color={colors.primary} size={20} />
+              </Pressable>
+            ))}
+          </View>
 
+          {/* Email */}
           <Pressable 
             style={[styles.contactCard, { backgroundColor: colors.card, borderColor: colors.border, borderWidth: 1 }]}
             onPress={handleEmail}
@@ -104,12 +116,13 @@ export default function ContactScreen() {
                 Email
               </Text>
               <Text style={[styles.contactValue, { color: colors.text }]}>
-                info@excellentgroupgarage.com
+                info@exellentgroupgarageltd.com
               </Text>
             </View>
             <IconSymbol name="chevron.right" color={colors.textSecondary} size={20} />
           </Pressable>
 
+          {/* Address */}
           <View style={[styles.contactCard, { backgroundColor: colors.card, borderColor: colors.border, borderWidth: 1 }]}>
             <View style={[styles.contactIconContainer, { backgroundColor: colors.accent }]}>
               <IconSymbol name="location.fill" color={colors.card} size={28} />
@@ -119,11 +132,13 @@ export default function ContactScreen() {
                 Address
               </Text>
               <Text style={[styles.contactValue, { color: colors.text }]}>
-                123 Auto Service Lane{'\n'}Garage City, GC 12345
+                Thika Road Next to Rainbow Resort Ruiru{'\n'}
+                P.O BOX 498 – 00232, Ruiru
               </Text>
             </View>
           </View>
 
+          {/* Business Hours */}
           <View style={[styles.contactCard, { backgroundColor: colors.card, borderColor: colors.border, borderWidth: 1 }]}>
             <View style={[styles.contactIconContainer, { backgroundColor: colors.highlight }]}>
               <IconSymbol name="clock.fill" color={colors.primary} size={28} />
@@ -195,7 +210,7 @@ export default function ContactScreen() {
                   borderColor: colors.border,
                   backgroundColor: colors.background,
                 }]}
-                placeholder="+1 (234) 567-8900"
+                placeholder="+254 712 345 678"
                 placeholderTextColor={colors.textSecondary}
                 value={phone}
                 onChangeText={setPhone}
@@ -260,6 +275,34 @@ const styles = StyleSheet.create({
   headerSubtitle: {
     fontSize: 15,
     lineHeight: 22,
+  },
+  card: {
+    borderRadius: 12,
+    padding: 20,
+    marginBottom: 16,
+    boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.1)',
+    elevation: 3,
+  },
+  cardHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 16,
+  },
+  cardTitle: {
+    fontSize: 18,
+    fontWeight: '700',
+  },
+  phoneItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: '#f0f0f0',
+  },
+  phoneText: {
+    fontSize: 16,
+    fontWeight: '600',
   },
   contactCard: {
     borderRadius: 12,

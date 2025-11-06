@@ -27,16 +27,32 @@ export default function HomeScreen() {
           ]}
           showsVerticalScrollIndicator={false}
         >
-          {/* Hero Section */}
+          {/* Hero Section with Logo */}
           <View style={styles.heroSection}>
-            <View style={[styles.logoContainer, { backgroundColor: colors.primary }]}>
-              <IconSymbol name="car.fill" color={colors.card} size={64} />
-            </View>
+            <Image 
+              source={require('@/assets/images/5956e054-af55-4006-9531-4f042ce5b83d.jpeg')}
+              style={styles.logo}
+              resizeMode="contain"
+            />
             <Text style={[styles.heroTitle, { color: colors.text }]}>
               Excellent Group Garage LTD
             </Text>
             <Text style={[styles.heroSubtitle, { color: colors.textSecondary }]}>
               Your Trusted Auto Care Partner
+            </Text>
+          </View>
+
+          {/* Location Card */}
+          <View style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border, borderWidth: 1 }]}>
+            <View style={styles.locationHeader}>
+              <IconSymbol name="location.fill" color={colors.primary} size={24} />
+              <Text style={[styles.cardTitle, { color: colors.text, marginLeft: 8 }]}>
+                Our Location
+              </Text>
+            </View>
+            <Text style={[styles.cardText, { color: colors.textSecondary }]}>
+              Thika Road Next to Rainbow Resort Ruiru{'\n'}
+              P.O BOX 498 – 00232, Ruiru
             </Text>
           </View>
 
@@ -164,15 +180,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 24,
   },
-  logoContainer: {
-    width: 120,
-    height: 120,
-    borderRadius: 60,
-    justifyContent: 'center',
-    alignItems: 'center',
+  logo: {
+    width: 200,
+    height: 200,
     marginBottom: 16,
-    boxShadow: '0px 4px 12px rgba(220, 0, 0, 0.3)',
-    elevation: 5,
+    borderRadius: 12,
   },
   heroTitle: {
     fontSize: 28,
@@ -191,6 +203,11 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.1)',
     elevation: 3,
+  },
+  locationHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 12,
   },
   cardTitle: {
     fontSize: 20,
